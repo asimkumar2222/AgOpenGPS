@@ -255,11 +255,14 @@ namespace AgOpenGPS
 
         #endregion // Class Props and instances
 
+        public StreamWriter fileasim;
         // Constructor, Initializes a new instance of the "FormGPS" class.
         public FormGPS()
         {
             //winform initialization
             InitializeComponent();
+
+            fileasim = File.AppendText("log.csv");  // asim logging
 
             //ControlExtension.Draggable(panelSnap, true);
             ControlExtension.Draggable(oglZoom, true);

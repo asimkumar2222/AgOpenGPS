@@ -555,6 +555,13 @@ namespace AgOpenGPS
                 mc.autoSteerData[mc.sdSpeed] = unchecked((byte)(Math.Abs(pn.speed) * 4.0));
                 //mc.machineControlData[mc.cnSpeed] = mc.autoSteerData[mc.sdSpeed];
 
+
+                fileasim.Write(pn.speed);  //asim logging
+                fileasim.Write(",");       //asim logging
+                fileasim.Write(guidanceLineSteerAngle);  //asim logging
+                fileasim.Write(",");                        //asim logging
+                fileasim.WriteLine(guidanceLineDistanceOff);  //asim logging
+
                 mc.autoSteerData[mc.sdDistanceHi] = unchecked((byte)(guidanceLineDistanceOff >> 8));
                 mc.autoSteerData[mc.sdDistanceLo] = unchecked((byte)(guidanceLineDistanceOff));
 
