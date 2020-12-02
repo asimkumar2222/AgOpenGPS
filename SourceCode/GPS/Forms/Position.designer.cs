@@ -555,7 +555,10 @@ namespace AgOpenGPS
                 mc.autoSteerData[mc.sdSpeed] = unchecked((byte)(Math.Abs(pn.speed) * 4.0));
                 //mc.machineControlData[mc.cnSpeed] = mc.autoSteerData[mc.sdSpeed];
 
-
+                //string timestamp = string.Format("Dt-{0:yyyy-MM-dd_hh-mm-ss-tt}", DateTime.Now);
+                string timestamp = string.Format("{0:yyyy-MM-dd_hh-mm-ss-tt}", DateTime.Now);
+                fileasim.Write(timestamp);  //asim logging
+                fileasim.Write(",");       //asim logging
                 fileasim.Write(pn.speed);  //asim logging
                 fileasim.Write(",");       //asim logging
                 fileasim.Write(guidanceLineSteerAngle);  //asim logging
