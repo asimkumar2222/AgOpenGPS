@@ -262,7 +262,8 @@ namespace AgOpenGPS
             //winform initialization
             InitializeComponent();
 
-            fileasim = File.AppendText("log.csv");  // asim logging
+            string n = string.Format("Deviation-{0:yyyy-MM-dd_hh-mm-ss-tt}-log.csv",DateTime.Now);
+            fileasim = File.AppendText(n); //"log.csv");  // asim logging
 
             //ControlExtension.Draggable(panelSnap, true);
             ControlExtension.Draggable(oglZoom, true);
